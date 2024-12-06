@@ -14,6 +14,9 @@ const __dirname = path.dirname(__filename);
 
 const REPOSITORY_URL = 'https://github.com/FIL-Builders/fil-frame.git';
 
+// the issue currently is that the keyboard interruptions don't trigger a question, but the process goes on as normal.
+// the process should be stopped when the user presses ctrl+c and a question should be asked to confirm if the user wants to stop the process or continue.
+// I suspect that the issue is with the handleInterruption function, but I'm not sure what the issue is.
 async function handleInterruption() {
   console.log('\n\nInterruption detected!');
   const { shouldExit } = await inquirer.prompt([{
