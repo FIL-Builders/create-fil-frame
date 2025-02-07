@@ -31,7 +31,7 @@ To use the interactive mode, simply run:
 npx create-filecoin-app
 ```
 
-You will be prompted to answer a series of questions to configure your new project. This includes your project name, selecting your preferred storage provider (Lighthouse, Storacha, Akave, and the Deal Client), and choosing whether to install project packages (using yarn).
+You will be prompted to answer a series of questions to configure your new project. This includes your project name, selecting your preferred integrations (Lighthouse, Storacha, Akave, Pyth, Axelar, Lit + Lighthouse, and the Deal Client), and choosing whether to install project packages (using yarn).
 
 ### Flag Mode
 
@@ -39,7 +39,7 @@ If you prefer to skip the prompts, you can use the flag mode to specify your opt
 
 #### Flag Options
 
-- Storage Provider (--provider): This contains 4 options currently: storacha, lighthouse, akave, and main.
+- Storage Provider (--provider): This contains 7 options currently: storacha, lighthouse, akave, pyth, axelar, lit+lighthouse and main.
 - Skip package installation (--skip-install)
 
 For example, to initialise a project named `my-app`, with lighthouse as the storage onramp:
