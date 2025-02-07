@@ -36,7 +36,7 @@ function showWelcomeMessage() {
 }
 
 function cloneContents(branch: string, projectPath: string) {
-  const cloneBranch = branch === 'storacha' ? 'storacha-nfts' : branch === 'lighthouse' ? 'lighthouse-nfts' : branch === 'akave' ? 'akave-integration' : 'main';
+  const cloneBranch = branch === 'storacha' ? 'storacha-nfts' : branch === 'lighthouse' ? 'lighthouse-nfts' : branch === 'akave' ? 'akave-integration' : branch === 'axelar' ? 'axelar-integration' : branch === 'pyth' ? 'pyth-integration' : branch === 'Lit+lighthouse' ? 'light-x-lighthouse' : 'main';
   execSync(`git clone --branch ${cloneBranch} ${REPOSITORY_URL} ${projectPath}`);
   fs.rmSync(path.join(projectPath, '.git'), { recursive: true, force: true });
 }
@@ -84,6 +84,9 @@ async function interactiveMode() {
         { name: 'Storacha', value: 'storacha' },
         { name: 'Lighthouse', value: 'lighthouse' },
         { name: 'Akave', value: 'akave' },
+        { name: 'Lit+lighthouse', value: 'lit+lighthouse' },
+        { name: 'Axelar', value: 'axelar' },
+        { name: 'Pyth', value: 'pyth' },
         { name: 'Deal Client', value: 'main' }
       ]
     },
@@ -108,7 +111,7 @@ program
   .description('CLI to create a new Filecoin app')
   .argument('[project-name]', 'Name of the new project')
   .addOption(new Option('--provider <type>', 'Choose storage provider')
-    .choices(['storacha', 'lighthouse', 'akave', 'main'])
+    .choices(['storacha', 'lighthouse', 'akave', 'lit+lighthouse', 'axelar', 'pyth', 'main'])
     .default('main'))
   .option('--skip-install', 'Skip package installation')
   .action(async (projectName, options) => {

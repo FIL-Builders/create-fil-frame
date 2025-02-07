@@ -1,6 +1,6 @@
 {
   "name": "create-filecoin-app",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A CLI to create a Filecoin-based application",
   "type": "module",
   "main": "dist/index.js",
